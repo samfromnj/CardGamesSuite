@@ -1,9 +1,14 @@
 #include <iostream>
 
-using namespace std;
+#include "deck.h"
+
+//using namespace std;
 
 int main()
 {
-    cout << "Hello World!" << endl;
+    Deck *myDeck = new Deck();
+    myDeck->printDeck();
+
+    //cout << "Hello World!" << endl;
     return 0;
 }
