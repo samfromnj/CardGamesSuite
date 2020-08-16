@@ -8,30 +8,25 @@
 
 Deck::Deck(int shoeSize /*= 1*/)
 {
-    /*
-    const int deckSize = 52;
-    const int numSuits = 4;
-    Card *ghost;
-
-    for(int suit = 0; suit < numSuits; suit++)
+    Card *ghost = new Card();
+    for(int suit = 0; suit < NUM_SUITS; suit++)
     {
-        for(int face = 0; face < deckSize/numSuits; face++)
+        for(int face = 0; face < DECK_SIZE/NUM_SUITS; face++)
         {
             for(int shoe = 0; shoe < shoeSize; shoe++)
             {
                 ghost->assignSuit(suit);
                 ghost->assignFace(face);
+                //std::cout << ghost->printCard() << std::endl;
                 deck.push_back(*ghost);
             }
         }
     }
-    */
 }
+
+
+
 /*
-
-
-
-
 void Deck::draw()
 {
     ;
@@ -43,12 +38,31 @@ void Deck::shuffle()
     std::random_shuffle(std::begin(deck), std::end(deck));
 }
 
+*/
+
 void Deck::printDeck()    // Review why iterators are used over looping over *.size()
 {
-    for (std::vector<std::vector<int>>::iterator it = deck.begin(); it != deck.end(); it++)
+    //for(int loc = 0; loc < deck.size(); loc++)
+    //    std::cout << (&(deck.at(loc)))->printCard() << std::endl;
+    for(std::vector<Card>::iterator it = deck.begin(); it != deck.end(); it++)
+        std::cout << (&(deck.at(loc)))->printCard() << std::endl;
+
+    /*
+    for (std::vector<Card>::iterator it = deck.begin(); it != deck.end(); it++)
     {
-        std::cout << transcodeSuit((*it)[0]) << " ";
-        std::cout << transcodeFace((*it)[1]) << std::endl;
+        ghost = &deck(*it);
     }
+    */
+
+    //std::cout << "Test" << std::endl;
+    //std::cout << ghost->printCard();
+    //std::cout << (deck.at(0))->Card::printCard();
+    /*
+
+        std::cout << deck(*it)printCard() std::endl;
+        //std::cout << Card::transcodeSuit((*it)[0]) << " ";
+        //std::cout << Card::transcodeFace((*it)[1]) << std::endl;
+    }
+    */
 }
-*/
+
