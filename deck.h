@@ -11,13 +11,8 @@ class Deck
 public:
     Deck(int val = 1);
     void printDeck();
-    /*
-    std::string transcodeSuit(Card);
-    std::string transcodeFace(Card);
-    void draw();
     void shuffle();
-
-    */
+    Card draw();
 
 private:
     std::vector<Card> deck;
