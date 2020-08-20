@@ -8,16 +8,16 @@
 
 Deck::Deck(int shoeSize /*= 1*/)
 {
-    Card *ghost = new Card();
+    Card ghost;// = new Card();
     for(int suit = 0; suit < NUM_SUITS; suit++)
     {
         for(int face = 0; face < DECK_SIZE/NUM_SUITS; face++)
         {
             for(int shoe = 0; shoe < shoeSize; shoe++)
             {
-                ghost->assignSuit(suit);
-                ghost->assignFace(face);
-                deck.push_back(*ghost);
+                ghost.assignSuit(suit);
+                ghost.assignFace(face);
+                deck.push_back(ghost);
             }
         }
     }
@@ -25,10 +25,9 @@ Deck::Deck(int shoeSize /*= 1*/)
 
 Card Deck::draw()
 {
-//    Card *card = new Card();
-//    card = deck.at(0);
-//    deck.erase(0);
-//    return card;
+  Card card(deck.back());
+  deck.pop_back();
+  return card;
 }
 
 void Deck::printDeck()

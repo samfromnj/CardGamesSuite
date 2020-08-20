@@ -3,14 +3,20 @@
 #include "card.h"
 #include "deck.h"
 
-//using namespace std;
-
 int main()
 {
-    Deck *myDeck = new Deck();
-    myDeck->shuffle();
-    myDeck->printDeck();
+    Deck myDeck;
+    myDeck.shuffle();
+    myDeck.printDeck();
 
-    //myDeck->draw();
+    Card myCard = myDeck.draw();
+    std::cout << myCard.printCard() << std::endl;
+
+    myCard = myDeck.draw();
+    std::cout << myCard.printCard() << std::endl;
+
+    myCard = myDeck.draw();
+    std::cout << myCard.printCard() << std::endl;
+
     return EXIT_SUCCESS;
 }
